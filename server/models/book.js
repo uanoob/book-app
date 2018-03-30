@@ -28,7 +28,7 @@ const bookSchema = mongoose.Schema(
       type: String,
       default: 'n/a',
     },
-    owner: {
+    ownerId: {
       type: String,
       required: true,
     },
