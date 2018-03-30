@@ -1,7 +1,7 @@
 {
   "name": "book-app",
   "version": "1.0.0",
-  "description": "",
+  "description": "React app with Express server",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -11,14 +11,34 @@
   "engines": {
     "node": "9.8.0"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/uanoob/book-app.git"
+  },
+  "keywords": [
+    "react",
+    "express",
+    "server",
+    "nodejs"
+  ],
   "author": "uanoob",
-  "license": "ISC",
-  "devDependencies": {},
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/uanoob/book-app/issues"
+  },
+  "homepage": "https://github.com/uanoob/book-app#readme",
+  "devDependencies": {
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-plugin-import": "^2.9.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-react": "^7.7.0"
+  },
   "dependencies": {
     "bcrypt": "^1.0.3",
     "body-parser": "^1.18.2",
     "concurrently": "^3.5.1",
     "cookie-parser": "^1.4.3",
+    "eslint": "^4.19.1",
     "express": "^4.16.3",
     "jsonwebtoken": "^8.2.0",
     "moment-js": "^1.1.15",

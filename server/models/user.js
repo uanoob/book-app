@@ -1,7 +1,8 @@
 const mongoose = require('mongoose');
 const bcript = require('bcrypt');
 const jwt = require('jsonwebtoken');
-const SALT_I = 10;
+
+const SALT_IT = 10;
 const config = require('../config/config');
 
 const userSchema = mongoose.Schema({
@@ -32,6 +33,39 @@ const userSchema = mongoose.Schema({
     type: String,
   },
 });
+
+userSchema.pre('save', function (next) {
+  const user = this;
+  if (user.isModified('password')) {
+    bcript.genSalt(SALT_IT, (err, salt) => {
+      if (err) return next(err);
+      bcript.hash(user.password, salt, (error, hash) => {
+        if (error) return next(error);
+        user.password = hash;
+        next();
+      });
+    });
+  } else {
+    next();
+  }
+});
+
+userSchema.methods.comparePassword = function (candidatePassword, cb) {
+  bcript.compare(candidatePassword, this.password, (err, isMatch) => {
+    if (err) return cb(err);
+    cb(null, isMatch);
+  });
+};
+
+userSchema.methods.generateToken = function (cb) {
+  const user = this;
+  const token = jwt.sign(user._id.toHexString(), config.jwtKey);
+  user.token = token;
+  user.save((err, u) => {
+    if (err) return cb(err);
+    cb(null, u);
+  });
+};
 
 const User = mongoose.model('User', userSchema);
 
