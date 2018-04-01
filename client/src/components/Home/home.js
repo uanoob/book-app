@@ -1,5 +1,7 @@
 import React from 'react';
 
-const Home = () => <div>Home</div>;
+import HomeContainer from '../../containers/home_container';
+
+const Home = () => <div><HomeContainer /></div>;
 
 export default Home;

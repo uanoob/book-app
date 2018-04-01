@@ -24,10 +24,7 @@ module.exports = (app) => {
       .limit(limit)
       .exec((err, doc) => {
         if (err) return res.json({ success: false });
-        res.status(200).json({
-          success: true,
-          book: doc,
-        });
+        res.status(200).send(doc);
       });
   });
 
