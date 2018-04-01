@@ -69,7 +69,7 @@ module.exports = (app) => {
     });
   });
 
-  app.post('/api/get_reviewer', (req, res) => {
+  app.get('/api/get_reviewer', (req, res) => {
     const { id } = req.query;
     User.findById(id, (err, doc) => {
       if (err) return res.status(400).send(err);

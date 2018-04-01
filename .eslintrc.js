@@ -14,5 +14,6 @@ module.exports = {
         "jsx-a11y/anchor-is-valid": [ "error", {"components": [ "Link" ], "specialLink": [ "to" ]}],
         "consistent-return": 0,
         "react/prop-types": 0,
+        "prefer-destructuring": 0,
       }
 };

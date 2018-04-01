@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import getBooks from '../actions';
+import { getBooks } from '../actions';
 import BookItem from '../widgetsUI/book_item';
 
 class HomeContainer extends Component {
