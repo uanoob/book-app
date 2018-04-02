@@ -15,5 +15,6 @@ module.exports = {
         "consistent-return": 0,
         "react/prop-types": 0,
         "prefer-destructuring": 0,
+        "react/no-unused-state": 0,
       }
 };

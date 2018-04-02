@@ -46,3 +46,12 @@ export function clearBookWithRewiewer() {
     },
   };
 }
+
+export function loginUser({ email, password }) {
+  const request = axios.post('/api/login', { email, password }).then(response => response.data);
+
+  return {
+    type: 'LOGIN_USER',
+    payload: request,
+  };
+}
