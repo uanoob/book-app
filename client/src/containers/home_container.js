@@ -6,7 +6,7 @@ import BookItem from '../widgetsUI/book_item';
 
 class HomeContainer extends Component {
   componentWillMount() {
-    this.props.dispatch(getBooks(2, 0, 'desc'));
+    this.props.dispatch(getBooks(4, 0, 'desc'));
   }
 
   loadmore = () => {

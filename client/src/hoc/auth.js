@@ -27,14 +27,15 @@ export default function (ComposedClass, reload) {
     }
 
     render() {
-      console.log(this.props);
       if (this.state.loading) return <div className="loader">Loading...</div>;
       return <ComposedClass {...this.props} user={this.props.user} />;
     }
   }
 
-  const mapStateToProps = state => ({
-    user: state.user,
-  });
+  function mapStateToProps(state) {
+    return {
+      user: state.user,
+    };
+  }
   return connect(mapStateToProps)(AuthenticationCheck);
 }

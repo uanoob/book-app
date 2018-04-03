@@ -25,13 +25,13 @@ module.exports = (app) => {
       });
   });
 
-  app.post('/api/books', (req, res) => {
+  app.post('/api/book', (req, res) => {
     const book = new Book(req.body);
     book.save((err, doc) => {
       if (err) return res.json({ success: false });
       res.status(200).json({
-        success: true,
-        book: doc,
+        bookId: doc._id,
+        post: true,
       });
     });
   });

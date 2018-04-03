@@ -47,6 +47,21 @@ export function clearBookWithRewiewer() {
   };
 }
 
+export function addBook(book) {
+  const request = axios.post('/api/book', book).then(response => response.data);
+  return {
+    type: 'ADD_BOOK',
+    payload: request,
+  };
+}
+
+export function clearNewBook() {
+  return {
+    type: 'CLEAR_NEWBOOK',
+    payload: {},
+  };
+}
+
 export function loginUser({ email, password }) {
   const request = axios.post('/api/login', { email, password }).then(response => response.data);
 
@@ -57,7 +72,7 @@ export function loginUser({ email, password }) {
 }
 
 export function auth() {
-  const request = axios.get('api/auth').then(response => response.data);
+  const request = axios.get('/api/auth').then(response => response.data);
 
   return {
     type: 'USER_AUTH',
