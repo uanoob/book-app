@@ -12,6 +12,7 @@ import AddReview from './containers/Admin/add';
 import EditReview from './containers/Admin/edit';
 import UserPosts from './components/Admin/userPosts';
 import Register from './containers/Admin/register';
+import Logout from './components/Admin/logout';
 
 const Routes = () => (
   <div>
@@ -19,6 +20,7 @@ const Routes = () => (
       <Switch>
         <Route path="/" exact component={Auth(Home, null)} />
         <Route path="/login" exact component={Auth(Login, false)} />
+        <Route path="/user/logout" exact component={Auth(Logout, true)} />
         <Route path="/user" exact component={Auth(User, true)} />
         <Route path="/user/add" exact component={Auth(AddReview, true)} />
         <Route path="/user/register" exact component={Auth(Register, true)} />
