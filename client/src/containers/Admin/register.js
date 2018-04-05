@@ -80,7 +80,6 @@ class Register extends PureComponent {
       : null);
 
   render() {
-    console.log(this.props);
     const user = this.props.user;
     return (
       <div className="rl_container">
